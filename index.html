@@ -4,76 +4,131 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Nikhil Mishra | 3D Portfolio</title>
+  <title>NIKHIL RAVISHANKAR MISHRA | 3D Portfolio</title>
 
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 
 <body>
-
-  <div id="loader">
-    <div class="spinner"></div>
-    <h2>Loading Portfolio...</h2>
-  </div>
-
+  <div id="progressBar"></div>
   <canvas id="bg"></canvas>
+  <div class="cursor-glow"></div>
 
   <header>
-    <h2>Nikhil Mishra</h2>
+    <h2>NIKHIL RAVISHANKAR MISHRA</h2>
 
-    <nav>
+    <nav id="navbar">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button id="themeToggle">🌙</button>
-  </header>
-  
 
-  <section id="home" class="hero">
+    <div class="header-actions">
+      <button id="themeToggle">🌙</button>
+      <button id="menuBtn">☰</button>
+    </div> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </header>
+
+  <section id="home" class="hero" data-aos="fade-up">
     <div class="hero-content">
       <p class="tag"><span id="typing"></span></p>
 
-      <h1>Hi, I’m <span>Nikhil Mishra</span></h1>
+      <h1>Hi, I’m <span>NIKHIL RAVISHANKAR MISHRA</span></h1>
 
       <p>
-        I build modern web applications using Python,
-        JavaScript, React.js, Node.js and creative
-        3D UI experiences.
+        I build modern web applications using Python, JavaScript, React.js,
+        Node.js and creative 3D UI experiences.
       </p>
 
       <div class="buttons">
-        <a href="#projects" class="btn">View Projects</a>
 
-        <a href="assets/resume/Nikhil_Mishra_Resume.pdf" class="btn secondary" download>
-          Resume
-        </a>
+  <a href="#projects" class="btn">
+    <i class="fas fa-code"></i> Projects
+  </a>
 
-        <a href="https://github.com/nikhilmishra111298-bot" target="_blank" class="btn secondary">
-          GitHub
-        </a>
+  <a href="assets/resume/Nikhil_Mishra_Resume.pdf" class="btn secondary" download>
+    <i class="fas fa-file"></i> Resume
+  </a>
 
-        <a href="https://www.linkedin.com/in/nikhil-mishra-560441244" target="_blank" class="btn secondary">
-          LinkedIn
-        </a>
-      </div>
+  <a href="https://www.linkedin.com/in/nikhil-mishra-560441244"
+     target="_blank"
+     class="btn secondary">
+
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+
+  <a href="https://github.com/nikhilmishra111298"
+     target="_blank"
+     class="btn secondary">
+
+    <i class="fab fa-github"></i> GitHub
+  </a>
+ </div>
+</div>
     </div>
   </section>
 
-  <section id="about" class="card">
-    <h2>About Me</h2>
+  <section class="stats-section">
+    <div class="stat-box">
+      <h2 class="counter" data-target="4">0</h2>
+      <p>Projects Built</p>
+    </div>
 
-    <p>
-      I am a Computer Science student passionate about frontend development,
-      backend systems, AI-based applications and modern 3D portfolio experiences.
-      I enjoy building professional web applications with modern technologies
-      and creative UI design.
-    </p>
+    <div class="stat-box">
+      <h2 class="counter" data-target="10">0</h2>
+      <p>Technical Skills</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="100">0</h2>
+      <p>Learning Hours</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="2025">0</h2>
+      <p>Career Start</p>
+    </div>
   </section>
 
-  <section id="skills" class="skills card">
+  <section id="about" class="about-section card" data-aos="fade-right">
+    <div class="about-text">
+      <h2>About Me</h2>
+
+      <p>
+        I am a passionate developer focused on building modern, responsive,
+        and interactive digital experiences. I enjoy creating professional
+        frontend interfaces, AI-powered applications, and immersive 3D portfolio
+        experiences using Python, JavaScript, React, Node.js, MongoDB, and creative UI design.
+      </p>
+
+      <div class="about-stats">
+        <div>
+          <h3>3+</h3>
+          <p>Projects Built</p>
+        </div>
+
+        <div>
+          <h3>10+</h3>
+          <p>Technical Skills</p>
+        </div>
+
+        <div>
+          <h3>Fresher</h3>
+          <p>Ready to Work</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-box">
+      <img src="assets/images/profile.png" alt="Nikhil Mishra Profile" />
+    </div>
+  </section>
+
+  <section id="skills" class="skills card" data-aos="zoom-in">
     <h2>Skills</h2>
 
     <div class="skill-grid">
@@ -90,47 +145,219 @@
     </div>
   </section>
 
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
+  <section class="services-section card" data-aos="fade-up">
+    <h2>Services</h2>
 
-    <div class="project-grid">
-
-      <div class="project-card" onclick="openModal('Credex AI Spend Audit', 'AI-powered audit platform that analyzes AI tool spending and suggests monthly savings.')">
-        <h3>Credex AI Spend Audit</h3>
-        <p>AI-powered audit platform that analyzes software spending and suggests savings.</p>
-        <span>Next.js • TypeScript • Tailwind CSS</span>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Frontend Development</h3>
+        <p>Modern responsive websites using HTML, CSS, JavaScript, React.js and Tailwind CSS.</p>
       </div>
 
-      <div class="project-card" onclick="openModal('Content Broadcasting System', 'Role-based content approval and broadcasting platform for teachers, principals and public users.')">
-        <h3>Content Broadcasting System</h3>
-        <p>Role-based content approval and broadcasting platform for teachers and principals.</p>
-        <span>React.js • Next.js • Tailwind CSS</span>
+      <div class="service-card">
+        <h3>Backend Development</h3>
+        <p>Python and Node.js backend systems with API integration and database connectivity.</p>
       </div>
 
-      <div class="project-card" onclick="openModal('Cinema Booking System', 'Smart cinema booking platform with AI recommendation and blockchain-based secure booking concept.')">
-        <h3>Cinema Booking System</h3>
-        <p>Smart cinema booking platform with AI recommendation and blockchain concept.</p>
-        <span>Python • JavaScript • AI</span>
+      <div class="service-card">
+        <h3>3D Web Design</h3>
+        <p>Interactive 3D portfolio websites using Three.js, animations and modern UI/UX concepts.</p>
       </div>
 
+      <div class="service-card">
+        <h3>AI-Based Projects</h3>
+        <p>AI-integrated systems, smart dashboards, recommendation systems and automation ideas.</p>
+      </div>
     </div>
   </section>
 
-  <section id="contact" class="card contact-section">
+  <section class="timeline-section card" data-aos="fade-left">
+    <h2>Journey</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+          <h3>Computer Science Student</h3>
+          <span>University of Mumbai</span>
+          <p>Learning software development, AI concepts, database systems, frontend and backend technologies.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+          <h3>Frontend Projects</h3>
+          <span>React • JavaScript • Tailwind</span>
+          <p>Built modern UI projects including Content Broadcasting System and responsive web applications.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+          <h3>AI & Full Stack Development</h3>
+          <span>Python • AI • Node.js</span>
+          <p>Working on AI-based systems, spend audit platforms, and futuristic 3D portfolio experiences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cert-section card" data-aos="fade-up">
+    <h2>Certifications & Achievements</h2>
+
+    <div class="cert-grid">
+      <div class="cert-card">
+        <h3>Employability Skills Training</h3>
+        <p>TNS India Foundation</p>
+      </div>
+
+      <div class="cert-card">
+        <h3>MS-CIT Certification</h3>
+        <p>Computer fundamentals and office productivity skills.</p>
+      </div>
+
+      <div class="cert-card">
+        <h3>University Level Volleyball</h3>
+        <p>Runner-up achievement in university-level tournament.</p>
+      </div>
+
+      <div class="cert-card">
+        <h3>National Level Rock Ball</h3>
+        <p>First prize winner in 2022.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+      <div class="project-card" onclick="openModal('Credex AI Spend Audit','AI tool spending audit platform that helps companies check AI subscription costs and find monthly savings.')">
+        <img src="assets/images/credex.png" alt="Credex AI Spend Audit" />
+        <h3>Credex AI Spend Audit</h3>
+        <p>AI tool spending audit platform that suggests savings.</p>
+        <span>Next.js • TypeScript • Tailwind</span>
+
+        <div class="project-links">
+  <a href="https://your-credex-live-link.netlify.app" target="_blank">Live Demo</a>
+  <a href="https://github.com/nikhilmishra111298-bot/credex-ai-infrastructure-intelligence" target="_blank">GitHub</a>
+</div>
+      </div>
+
+      <div class="project-card" onclick="openModal('Content Broadcasting System','Role-based system where teachers upload content and principals approve or reject it.')">
+        <img src="assets/images/broadcasting.png" alt="Content Broadcasting System" />
+        <h3>Content Broadcasting System</h3>
+        <p>Role-based content approval system for teachers and principal.</p>
+        <span>React • Next.js • Tailwind</span>
+
+       <div class="project-links">
+  <a href="https://your-broadcasting-live-link.netlify.app" target="_blank">Live Demo</a>
+  <a href="https://github.com/nikhilmishra111298-bot/content-broadcasting-system" target="_blank">GitHub</a>
+</div>
+      </div>
+
+      <div class="project-card" onclick="openModal('Cinema Booking System','Smart cinema booking system with AI recommendation and blockchain-based secure booking idea.')">
+        <img src="assets/images/cinema.png" alt="Cinema Booking System" />
+        <h3>Cinema Booking System</h3>
+        <p>Smart cinema booking with AI recommendation and blockchain idea.</p>
+        <span>Python • JavaScript • AI</span>
+
+       <div class="project-links">
+  <a href="https://your-cinema-live-link.netlify.app" target="_blank">Live Demo</a>
+  <a href="https://github.com/nikhilmishra111298-bot/cinema-booking-system" target="_blank">GitHub</a>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial-section card" data-aos="fade-up">
+    <h2>Testimonials</h2>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>"Nikhil creates modern and responsive UI designs with great attention to detail."</p>
+        <h3>Frontend Reviewer</h3>
+        <span>UI/UX Feedback</span>
+      </div>
+
+      <div class="testimonial-card">
+        <p>"Strong learning mindset and creative project ideas in AI and web development."</p>
+        <h3>Project Mentor</h3>
+        <span>Development Review</span>
+      </div>
+
+      <div class="testimonial-card">
+        <p>"Professional portfolio design with interactive animations and modern layout."</p>
+        <h3>Portfolio Feedback</h3>
+        <span>Web Experience</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="resume-section card" data-aos="fade-up">
+    <h2>Resume</h2>
+
+    <p>
+      Download my resume to view my education, skills, projects,
+      certifications, and contact details.
+    </p>
+
+    <a href="assets/resume/Nikhil_Mishra_Resume.pdf" class="resume-btn" download>
+      Download CV
+    </a>
+  </section>
+
+  <section id="contact" class="card contact-section" data-aos="zoom-in-up">
     <h2>Contact Me</h2>
 
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" rows="5" required></textarea>
+    <form class="contact-form" action="https://formspree.io/f/xkoebdaw" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
       <button type="submit">Send Message</button>
     </form>
 
-    <div class="contact-info">
-      <p>Email: nikhil.mishra.111298@gmail.com</p>
-      <p>LinkedIn: linkedin.com/in/nikhil-mishra-560441244</p>
-      <p>GitHub: github.com/nikhilmishra111298-bot</p>
+    <div class="contact-cards">
+
+  <a href="mailto:nikhil.mishra.111298@gmail.com" class="contact-card">
+    <i class="fas fa-envelope"></i>
+
+    <div>
+      <h3>Email</h3>
+      <p>nikhil.mishra.111298@gmail.com</p>
     </div>
+  </a>
+
+  <a href="https://www.linkedin.com/in/nikhil-mishra-560441244"
+     target="_blank"
+     class="contact-card">
+
+    <i class="fab fa-linkedin"></i>
+
+    <div>
+      <h3>LinkedIn</h3>
+      <p>Connect Professionally</p>
+    </div>
+  </a>
+
+  <a href="https://github.com/nikhilmishra111298-bot"
+     target="_blank"
+     class="contact-card">
+
+    <i class="fab fa-github"></i>
+
+    <div>
+      <h3>GitHub</h3>
+      <p>View My Projects</p>
+    </div>
+  </a>
+
+</div>
   </section>
 
   <div id="projectModal" class="modal">
@@ -141,26 +368,48 @@
     </div>
   </div>
 
+  <div class="chatbot">
+    <button onclick="toggleChat()">AI</button>
+
+    <div class="chatbox" id="chatbox">
+      <h3>Portfolio Assistant</h3>
+      <p>Hello! I am Nikhil’s AI assistant.</p>
+      <p>Ask about skills, projects, or contact details.</p>
+
+      <input type="text" id="chatInput" placeholder="Ask something..." />
+      <button onclick="sendChat()">Send</button>
+
+      <div id="chatReply"></div>
+    </div>
+  </div>
+
+ <div class="social-sidebar">
+
+  <a href="https://github.com/nikhilmishra111298" target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a href="https://www.linkedin.com/in/nikhil-mishra-560441244" target="_blank">
+    <i class="fab fa-linkedin"></i>
+  </a>
+
+  <a href="mailto:nikhil.mishra.111298@gmail.com">
+    <i class="fas fa-envelope"></i>
+  </a>
+
+  <a href="assets/resume/Nikhil_Mishra_Resume.pdf" download>
+    <i class="fas fa-file"></i>
+  </a>
+
+</div>
+  <button id="backToTop">↑</button>
+
   <footer class="footer">
     <p>© 2026 Nikhil Mishra. All Rights Reserved.</p>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script type="module" src="js/three-scene.js"></script>
   <script src="js/main.js"></script>
-  <div class="chatbot">
-  <button onclick="toggleChat()">AI</button>
-
-  <div class="chatbox" id="chatbox">
-    <h3>Portfolio Assistant</h3>
-    <p>Hello! I am Nikhil’s AI assistant.</p>
-    <p>Ask about skills, projects, or contact details.</p>
-
-    <input type="text" id="chatInput" placeholder="Ask something..." />
-    <button onclick="sendChat()">Send</button>
-
-    <div id="chatReply"></div>
-  </div>
-</div>
-
 </body>
 </html>
