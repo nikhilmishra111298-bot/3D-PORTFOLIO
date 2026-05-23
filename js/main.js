@@ -215,3 +215,152 @@ if (backToTop) {
     });
   });
 }
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach((question) => {
+  question.addEventListener("click", () => {
+
+    const answer = question.nextElementSibling;
+
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+
+  });
+});
+window.addEventListener("load", () => {
+
+  const loader = document.getElementById("loader");
+
+  if(loader){
+
+    setTimeout(() => {
+      loader.classList.add("hide");
+    }, 1200);
+
+  }
+
+});
+const mouseTrail = document.querySelector(".mouse-trail");
+
+if(mouseTrail){
+
+  document.addEventListener("mousemove", (e) => {
+
+    mouseTrail.style.left = e.clientX + "px";
+    mouseTrail.style.top = e.clientY + "px";
+
+  });
+
+}
+const hoverElements = document.querySelectorAll(
+  "a, button, .project-card, .tech-card"
+);
+
+hoverElements.forEach((element) => {
+
+  element.addEventListener("mouseenter", () => {
+
+    if(mouseTrail){
+      mouseTrail.style.transform = "translate(-50%, -50%) scale(2)";
+    }
+
+  });
+
+  element.addEventListener("mouseleave", () => {
+
+    if(mouseTrail){
+      mouseTrail.style.transform = "translate(-50%, -50%) scale(1)";
+    }
+
+  });
+
+});
+function openModal(title, desc, image, techs){
+
+  const modal = document.getElementById("projectModal");
+
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalDesc").innerText = desc;
+  document.getElementById("modalImage").src = image;
+
+  const techContainer = document.getElementById("modalTech");
+
+  techContainer.innerHTML = "";
+
+  techs.forEach((tech) => {
+
+    const span = document.createElement("span");
+
+    span.innerText = tech;
+
+    techContainer.appendChild(span);
+
+  });
+
+  modal.style.display = "flex";
+}
+
+function closeModal(){
+
+  document.getElementById("projectModal").style.display = "none";
+
+}
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(
+  "nav a, .mobile-bottom-nav a"
+);
+
+window.addEventListener("scroll", () => {
+
+  let current = "";
+
+  sections.forEach((section) => {
+
+    const sectionTop = section.offsetTop - 150;
+    const sectionHeight = section.clientHeight;
+
+    if(window.scrollY >= sectionTop){
+      current = section.getAttribute("id");
+    }
+
+  });
+
+  navLinks.forEach((link) => {
+
+    link.classList.remove("active");
+
+    if(link.getAttribute("href") === `#${current}`){
+      link.classList.add("active");
+    }
+
+  });
+
+});
+const reveals = document.querySelectorAll(".reveal");
+
+function revealSections(){
+
+  reveals.forEach((section) => {
+
+    const windowHeight = window.innerHeight;
+
+    const revealTop = section.getBoundingClientRect().top;
+
+    const revealPoint = 120;
+
+    if(revealTop < windowHeight - revealPoint){
+
+      section.classList.add("active");
+
+    }
+
+  });
+
+}
+
+window.addEventListener("scroll", revealSections);
+
+revealSections();
